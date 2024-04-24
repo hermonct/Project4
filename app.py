@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 data = pd.read_csv('Orange.csv', index_col=0)
 
 st.title('Orange Tree Growth Visualization') # Set the title of the app
+
+
 trees = st.sidebar.multiselect('Select a Tree:', data['Tree'].unique(), default=data['Tree'].unique()[0]) # Create a sidebar with a selection box for the tree. The side bar method returns a list of selected trees. It takes three arguments: the title of the sidebar, the list of options, and the default value. We set the default value to the first tree in the dataset.
 filtered_data = data[data['Tree'].isin(trees)] # Check if the selected trees are in the dataset and filter the data accordingly. We use the isin method to filter the data based on the selected trees.
 st.subheader('Orange Data Table') #  Create a subheader
